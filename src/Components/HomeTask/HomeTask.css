@@ -18,7 +18,7 @@
 }
 
 .accident-count{
-  width: 50%;
+  width: 45%;
   display: flex;
   justify-content: end;
   font-weight: bold;
@@ -27,18 +27,37 @@
   margin-left: 25%;
 }
 
+
+.dropdown{
+  position: relative;
+}
+
+.menu{
+  position: absolute;
+}
+
+.accident-filter{
+  font-weight: bold;
+  margin-left: 30%;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
 .accident-list{
-  width: 50%;
+  width: 40%;
   height: 50%;
   overflow-x: scroll;
-  margin-left: 25%;
+  margin-left: 30%;
   
 }
 
 .accident-list-element{
   color: aliceblue;
   background-color: #856c92;
-  border-radius: 2rem;
+  border-radius: 1rem;
   list-style: none;
   margin-bottom: 1rem;
   padding-left: 1rem;
@@ -63,3 +82,4 @@
   flex-direction: row;
   gap: .5rem;
 }
+
