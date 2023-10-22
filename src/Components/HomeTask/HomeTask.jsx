@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './HomeTask.css';
-import { it } from 'vitest';
 
 function HomeTask({accidents, setLocation}) {
-
-
+  const [idOfCollapseble, setIdOfCollapseble] = useState(null)
   //SKRIV HVA DETTE GJØR
   function biggestToSmallest(a,b){
     b.Ulykkesdato - a.Ulykkesdato
@@ -15,24 +13,34 @@ function HomeTask({accidents, setLocation}) {
 
   //SKRIV HVA DETTE GJØR
   const sortedList = accidents?.sort((a,b) => b.Ulykkesdato - a.Ulykkesdato)
-
-  //Mapper ut objektene i listen "accidents" - returnerer bare kommunenavn og dato
+  
+    //Mapper ut objektene i listen "accidents" - returnerer bare kommunenavn og dato
   const accidentData = sortedList.map((item, index) => {
-    return <li className='accident-list-element' key={index}>{item.Kommunenavn}  {new Date(item.Ulykkesdato).toLocaleDateString()} {new Date(item.Ulykkesdato).toLocaleTimeString()} </li>
-  })
+    
+    if( !idOfCollapseble && index === 0 || item.OBJECTID === idOfCollapseble){ // denne skal være åpen
+      return <div className='accident-list-element-expand' key={index} onClick={()=>setIdOfCollapseble(item.OBJECTID )}>
+        <div className='accident-list-element-expand-info'>
+          <p>{item.Kommunenavn}  </p>
+          <p>{new Date(item.Ulykkesdato).toLocaleDateString()} </p>
+          <p>{new Date(item.Ulykkesdato).toLocaleTimeString()}</p>
+        </div>
+        <p>Antall enheter: {item.Antall_enheter}  </p>
+        <p>Fartsgrense: {item.Fartsgrense} </p>
+        <p>Fylke: {item.Fylkenavn} </p>
+        <p>Førerforhold: {item.Føreforhold}</p>
+        <p>Kommune: {item.Kommunenavn} </p>
+        <p>Lysforhold: {item.Lysforhold}</p>
+      </div>
+    }
 
-  const accidentDataFull = sortedList.map((item, index) => {
-    console.log(item)
-    return <li className='accident--list-element-expand' key={index}>
-      {item.Antall_enheter}  
-      {item.Fartsgrense} 
-      {item.Fylkenavn} 
-      {item.Føreforhold}
-      {item.Kommunenavn} 
-      {item.Lysforhold}
-      </li>
-  })
-
+    else{ //ellers skal denne være lukket
+      return <div className='accident-list-element' key={index} onClick={()=>setIdOfCollapseble(item.OBJECTID)}>
+          <p>{item.Kommunenavn}  </p>
+          <p>{new Date(item.Ulykkesdato).toLocaleDateString()} </p>
+          <p>{new Date(item.Ulykkesdato).toLocaleTimeString()} </p>
+        </div>
+      }
+    })
 
   return (
     <div className="homeTask">
@@ -42,7 +50,6 @@ function HomeTask({accidents, setLocation}) {
       <div className='accident-count'>Ulykker: {accidents?.length}</div>
       <div className='accident-list'>
         <div >{accidentData}</div>
-        <div >{accidentDataFull}</div>
       </div>
       
     </div>
