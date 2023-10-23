@@ -1,0 +1,36 @@
+.dropdown{
+    position: relative;
+}
+
+.dropdownBtn{
+   height: 2rem;
+   align-items: center;
+   width: 6rem;
+   height: 2rem;
+   font-weight: bold;
+}
+  
+.menu{
+    position: absolute;
+    background-color: white;
+    border-style: solid;
+    border-width: .1rem;
+    font-weight: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 6rem;
+}
+  
+.menu-item:hover{
+    background-color: rgb(106, 106, 253);
+}
+  
+.menu-item{
+    padding-left: 1rem;
+}
+
+.menu-title{
+    margin: 0;
+}

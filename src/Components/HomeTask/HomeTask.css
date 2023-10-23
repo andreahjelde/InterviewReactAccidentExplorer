@@ -25,48 +25,16 @@
   margin-left: 25%;
 }
 
-.dropdown{
-  position: relative;
-}
-
-.menu-title{
-  width: 6rem;
-  padding: 0;
-}
-
-.accident-filter p { margin: 0;}
-
-.menu{
-  position: absolute;
-  background-color: white;
- 
-  border-style: solid;
-  border-width: .1rem;
-  font-weight: normal;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  width: 6rem;
-}
-
-
-.menu-item:hover{
-  background-color: rgb(106, 106, 253);
-}
-
-.menu-item{
-  padding-left: 1rem;
-}
+.accident-filter-text{ margin: 0;}
 
 .accident-filter{
   font-weight: bold;
   margin-left: 30%;
-  height: 3rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: .5rem;
+  margin-bottom: 1rem;
 }
 
 .accident-list{
@@ -76,47 +44,6 @@
   margin-left: 30%;
 }
 
-.accident-list-element{
-  color: aliceblue;
-  background-color: #856c92;
-  border-radius: 1rem;
-  list-style: none;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: row;
-  gap: .2rem;
-  font-weight: bold;
-}
-.accident-list-element-expand-main{
-  color: aliceblue;
-  background-color: #856c92;
-  border-radius: 1rem;
-  list-style: none;
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  gap: .2rem;
-  font-weight: bold;
 
-}
-.accident-list-element-expand{
-  color: aliceblue;
-  background-color: #856c92;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  height: 21rem;
-}
 
-.accident-list-element-title{font-weight: bold;}
-.accident-list-element-expand p {
-  margin: .2rem;
-}
-
-.accident-list-element-expand-info{
-  display: flex;
-  flex-direction: row;
-  gap: .5rem;
-}
 
