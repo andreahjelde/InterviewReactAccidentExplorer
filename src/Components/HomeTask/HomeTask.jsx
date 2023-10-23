@@ -62,23 +62,24 @@ function HomeTask({accidents, setLocation}) {
       //SKRIV HVA DETTE GJØR
     const accidentFilter = () => {
         return <div className='dropdown'>
-        <button onClick={handleOpen}>vis alt</button>
+          
+        <p onClick={handleOpen}>{filterSpeed ? <p className='menu-title'>{filterSpeed}</p> : <p className='menu-title'>vis alt</p> }</p>
         {open ? (
           <ul className='menu'>
              <li className='menu-item'>
-              <button onClick={()=>{handleFilterSelect(null)}}>Vis alt</button>
+              <p onClick={()=>{handleFilterSelect(null)}}>Vis alt</p>
             </li>
             <li className='menu-item'>
-              <button onClick={()=>{handleFilterSelect("110")}}>110</button>
+              <p onClick={()=>{handleFilterSelect("110")}}>110</p>
             </li>
             <li className='menu-item'>
-              <button onClick={()=>{handleFilterSelect("100")}}>100</button>
+              <p onClick={()=>{handleFilterSelect("100")}}>100</p>
             </li>
             <li className='menu-item'>
-              <button onClick={()=>{handleFilterSelect("90")}}>90</button>
+              <p onClick={()=>{handleFilterSelect("90")}}>90</p>
             </li>
             <li className='menu-item'>
-              <button onClick={()=>{handleFilterSelect("80")}}>80</button>
+              <p onClick={()=>{handleFilterSelect("80")}}>80</p>
             </li>
           </ul>
         ):  null}
@@ -94,7 +95,7 @@ function HomeTask({accidents, setLocation}) {
       <div className='accident-count'>Ulykker: {filteredList?.length}</div>
       <div className='accident-filter'>
         <p>Filter:</p> 
-        {accidentFilter()}
+        <p>{accidentFilter()}</p>
       </div>
       <div className='accident-list'>
         <div >{accidentData}</div>
